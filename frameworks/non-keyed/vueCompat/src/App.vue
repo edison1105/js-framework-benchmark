@@ -59,11 +59,12 @@ export default {
 };
 </script>
 
+
 <template>
   <div class="jumbotron">
     <div class="row">
       <div class="col-md-6">
-        <h1>Vue.js 3.5 (non-keyed)</h1>
+        <h1>Vue.js compat (non-keyed)</h1>
       </div>
       <div class="col-md-6">
         <div class="row">

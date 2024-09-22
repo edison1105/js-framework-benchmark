@@ -60,10 +60,11 @@ export default {
 </script>
 
 <template>
+  <div>
   <div class="jumbotron">
     <div class="row">
       <div class="col-md-6">
-        <h1>Vue.js 3.5 (non-keyed)</h1>
+        <h1>Vue.js 2.7 (keyed)</h1>
       </div>
       <div class="col-md-6">
         <div class="row">
@@ -135,6 +136,7 @@ export default {
     <tbody>
       <tr
         v-for="{ id, label } of rows"
+        :key="id"
         :class="{ danger: id === selected }"
         :data-label="label"
         v-memo="[label, id === selected]"
@@ -156,4 +158,5 @@ export default {
     class="preloadicon glyphicon glyphicon-remove"
     aria-hidden="true"
   ></span>
+</div>
 </template>
