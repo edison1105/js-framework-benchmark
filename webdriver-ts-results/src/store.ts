@@ -20,7 +20,8 @@ const removeKeyedSuffix = (value: string) => {
   return value.replace(/-keyed|-non-keyed$/, "");
 };
 
-const mappedFrameworks = rawFrameworks.map((f) => ({
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const mappedFrameworks = rawFrameworks.map((f: any) => ({
   name: f.name,
   dir: f.dir,
   displayname: removeKeyedSuffix(f.name),
@@ -33,8 +34,8 @@ const allBenchmarks = new Set(rawBenchmarks);
 const allFrameworks = new Set(mappedFrameworks);
 
 const results: Result[] = [];
-for (let result of rawResults) {
-  for (let b of result.b) {
+for (const result of rawResults) {
+  for (const b of result.b) {
     const values: { [k: string]: ResultValues } = {};
     for (const key of Object.keys(b.v)) {
       const r = b.v[key];
@@ -328,7 +329,7 @@ export const useRootStore = create<State & Actions>((set, get) => ({
 
     try {
       navigator.clipboard.writeText(json);
-      window.location.hash = btoa(json);
+      globalThis.location.hash = btoa(json);
     } catch (error) {
       console.error("Copying state failed", error);
     }
