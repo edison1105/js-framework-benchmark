@@ -17,7 +17,7 @@
     "vue": "https://pkg.pr.new/vue@c6fe9f9"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "https://pkg.pr.new/@vitejs/plugin-vue@c156992",
+    "@vitejs/plugin-vue": "https://pkg.pr.new/@vitejs/plugin-vue@95be153",
     "vite": "^5.4.11"
   }
 }
